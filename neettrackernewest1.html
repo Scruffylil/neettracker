@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeetTracker - Smarter NEET Prep</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .backdrop-blur-3xl {
+            backdrop-filter: blur(3rem);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="relative min-h-screen text-slate-700">
+
+    <div class="fixed inset-0" style="background-image: url('https://googleusercontent.com/file_content/uploaded:image_93cd02.jpg-099519df-40bf-4758-b287-4f6fd7c936c3'); background-size: cover; background-position: center; z-index: -40;"></div>
+    <div id="gradient-bg" class="fixed inset-0 bg-white/80" style="z-index: -30;"></div>
+    <div class="fixed inset-0 backdrop-blur-3xl" style="background-color: rgba(255, 255, 255, 0.2); background-image: repeating-linear-gradient(90deg, rgba(255,255,255,0.1) 0, rgba(255,255,255,0.1) 1px, transparent 1px, transparent 3px); z-index: -20;"></div>
+
+    <div class="relative z-10">
+
+        <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/80 border-b border-slate-200 shadow-sm">
+            <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="https://i.postimg.cc/j2Z5X2bh/image-removebg-preview.png" alt="NeetTracker logo" class="h-12 w-auto" />
+                    <span class="ml-2 hidden sm:inline-flex px-2.5 py-0.5 text-xs rounded-full font-medium tracking-wide bg-slate-200 text-slate-800">AI Prep</span>
+                </div>
+
+                <nav class="hidden md:flex items-center gap-6 text-lg font-medium text-slate-700">
+                    <a href="#solutions" class="hover:text-slate-900 transition-colors">Solutions</a>
+                    <a href="#features" class="hover:text-slate-900 transition-colors">Features</a>
+                    <a href="#pricing" class="hover:text-slate-900 transition-colors">Pricing</a>
+                    <a href="#contact" class="hover:text-slate-900 transition-colors">Contact</a>
+                </nav>
+
+                <div class="flex items-center gap-3">
+                    <button class="hidden sm:inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium transition-colors hover:bg-slate-100 h-12 px-5 py-2">Sign in</button>
+                    <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors h-12 px-5 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold shadow-md">Login</button>
+                </div>
+            </div>
+        </header>
+
+        <section id="hero" class="relative isolate overflow-hidden min-h-screen flex items-center justify-center py-40">
+            <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col items-center justify-center text-center">
+                    <div>
+                        <span class="inline-flex mb-6 px-5 py-2 rounded-full text-lg text-white font-semibold tracking-wide bg-gradient-to-r from-blue-500 to-green-500 transform transition-transform duration-300 hover:scale-105 shadow-lg">Built for Institutes & Students</span>
+                        <h1 class="text-6xl sm:text-7xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                            <span class="text-8xl font-extrabold text-blue-600 block mb-4">Neet Tracker</span>
+                            Smarter NEET prep for every learner.
+                        </h1>
+                        <p class="mt-6 text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                            Personalised practice for students. Cohort analytics for institutions. One platform that adapts to skills, language, and pace.
+                        </p>
+                        <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                            <button class="h-14 px-8 bg-green-600 hover:bg-green-700 font-semibold shadow-md rounded-lg text-white text-lg">Get Started</button>
+                            <button class="h-14 px-8 font-medium rounded-lg text-slate-900 border border-slate-200 hover:bg-slate-100 text-lg">Book a demo</button>
+                        </div>
+                        <div class="mt-10 flex flex-wrap items-center justify-center gap-8 text-xl text-slate-600 font-medium">
+                            <div class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-blue-600"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                Secure
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-blue-600"><path d="m5 8 6 6"></path><path d="m4 14 6-6"></path><path d="M2 5h10"></path><path d="M22 17H12"></path><path d="M2 11h10"></path><path d="M12 3v18"></path><path d="M12 11h9.5a1.5 1.5 0 0 1 0 3H12"></path></svg>
+                                13 languages
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-blue-600"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
+                                Android / Web
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-20 mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+                <img src="https://i.postimg.cc/GmSJZRcd/image.png" alt="Product dashboard mockup" class="w-full h-auto rounded-xl shadow-lg border border-slate-200" />
+            </div>
+        </section>
+
+        <section id="solutions" class="py-20 sm:py-24 border-y border-slate-200">
+            <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto mb-12 max-w-3xl text-center">
+                    <span class="mb-4 inline-flex px-4 py-1.5 rounded-full text-lg text-white font-medium tracking-wide bg-gradient-to-r from-green-600 to-blue-600">Solutions</span>
+                    <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">A unique platform for students and institutions.</h2>
+                    <p class="mt-4 text-xl text-slate-600 leading-relaxed">Whether you're a student preparing for NEET or an institute managing a cohort, NeetTracker has a solution for you.</p>
+                </div>
+                <div class="mx-auto max-w-4xl">
+                    <div class="flex items-center justify-center">
+                        <div id="tabs-list" class="grid w-full grid-cols-2 rounded-lg bg-slate-100 p-1.5 text-slate-500 text-xl">
+                            <button class="tab-trigger p-3 font-medium text-slate-900 rounded-lg bg-white shadow-sm" data-tab="students">For Students</button>
+                            <button class="tab-trigger p-3 font-medium hover:text-slate-900 transition-colors" data-tab="institutes">For Institutes</button>
+                        </div>
+                    </div>
+                    <div id="tabs-content" class="mt-10">
+                        <div class="tab-content hidden" id="students">
+                            <div class="p-8 bg-white rounded-xl border border-slate-200 shadow-md">
+                                <div class="grid md:grid-cols-2 gap-10">
+                                    <div class="space-y-6">
+                                        <div class="flex gap-5">
+                                            <div class="mt-1 shrink-0 text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg></div>
+                                            <div>
+                                                <h4 class="font-bold text-2xl text-slate-900">Practice Mode</h4>
+                                                <p class="text-lg text-slate-600 leading-snug mt-1">Drill down on specific chapters with our massive question bank and get instant feedback.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-5">
+                                            <div class="mt-1 shrink-0 text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M3 3v18h18"></path><path d="m18 10-6 6-4-4-4 4"></path></svg></div>
+                                            <div>
+                                                <h4 class="font-bold text-2xl text-slate-900">Performance Reports</h4>
+                                                <p class="text-lg text-slate-600 leading-snug mt-1">Track your progress over time with detailed charts and insights.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-5">
+                                            <div class="mt-1 shrink-0 text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></div>
+                                            <div>
+                                                <h4 class="font-bold text-2xl text-slate-900">Mock Tests</h4>
+                                                <p class="text-lg text-slate-600 leading-snug mt-1">Simulate the real NEET exam experience with full-length mock tests.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="relative aspect-[4/3] rounded-xl bg-gradient-to-br from-blue-50 to-green-50 shadow-inner overflow-hidden">
+                                        <img src="https://i.postimg.cc/NF1jWFMy/image.png" alt="Student Dashboard" class="w-full h-full object-cover rounded-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x450/E5E7EB/4B5563?text=Student+Dashboard+Mockup';" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content hidden" id="institutes">
+                            <div class="p-8 bg-white rounded-xl border border-slate-200 shadow-md">
+                                <div class="grid md:grid-cols-2 gap-10">
+                                    <div class="space-y-6">
+                                        <div class="flex gap-5">
+                                            <div class="mt-1 shrink-0 text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                                            <div>
+                                                <h4 class="font-bold text-2xl text-slate-900">Cohort Management</h4>
+                                                <p class="text-lg text-slate-600 leading-snug mt-1">Effortlessly manage your batches, assign tests, and track progress for all your students in one place.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-5">
+                                            <div class="mt-1 shrink-0 text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="m22 15-5-5L17 4h-6v3.5L7 7l-5 5L7 17l5 5h6v-6l5-5Z"></path></svg></div>
+                                            <div>
+                                                <h4 class="font-bold text-2xl text-slate-900">Institute Branded Platform</h4>
+                                                <p class="text-lg text-slate-600 leading-snug mt-1">A white-labeled solution that lets you provide a premium experience under your brand.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-5">
+                                            <div class="mt-1 shrink-0 text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Z"></path><path d="M12 2v20"></path><path d="M2 12h20"></path><path d="M14.65 6.44c-1.28.77-2.6.24-3-.34m-2.22 8.35c.78-1.28.24-2.6-.34-3"></path><path d="M6.44 9.35a5.53 5.53 0 0 0 2.22 2.22c1.28.78 2.6.24 3-.34"></path><path d="M17.56 14.65a5.53 5.53 0 0 1-2.22-2.22c-.78-1.28-.24-2.6.34-3"></path></svg></div>
+                                            <div>
+                                                <h4 class="font-bold text-2xl text-slate-900">Global Analytics</h4>
+                                                <p class="text-lg text-slate-600 leading-snug mt-1">Compare your cohort's performance against regional and national benchmarks.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="relative aspect-[4/3] rounded-xl bg-gradient-to-br from-blue-50 to-green-50 shadow-inner overflow-hidden">
+                                        <img src="https://placehold.co/600x450/BDBDBD/4B5563?text=Institute+Dashboard+Mockup" alt="Institute Dashboard Mockup" class="w-full h-full object-cover rounded-xl" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-20 sm:py-24">
+            <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto mb-12 max-w-3xl text-center">
+                    <span class="mb-4 inline-flex px-4 py-1.5 rounded-full text-lg text-white font-medium tracking-wide bg-gradient-to-r from-green-600 to-blue-600">Features</span>
+                    <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">The platform that thinks like a tutor.</h2>
+                    <p class="mt-4 text-xl text-slate-600 leading-relaxed">NeetTracker's AI engine personalises every step of the learning journey, helping students focus on what they need most.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="p-8 h-full bg-white rounded-xl border border-slate-200 shadow-md">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-blue-100 text-blue-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5z"></path><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"></path></svg>
+                        </div>
+                        <h3 class="mt-5 text-2xl font-bold">Adaptive Learning Paths</h3>
+                        <p class="mt-3 text-lg text-slate-600">Our AI dynamically adjusts the difficulty of questions based on a student's performance, ensuring they're always challenged at the right level.</p>
+                    </div>
+                    <div class="p-8 h-full bg-white rounded-xl border border-slate-200 shadow-md">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-blue-100 text-blue-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="M3 3v18h18"></path><path d="m18 10-6 6-4-4-4 4"></path></svg>
+                        </div>
+                        <h3 class="mt-5 text-2xl font-bold">Detailed Performance Analytics</h3>
+                        <p class="mt-3 text-lg text-slate-600">Students get a full breakdown of their strengths and weaknesses across subjects, chapters, and question types.</p>
+                    </div>
+                    <div class="p-8 h-full bg-white rounded-xl border border-slate-200 shadow-md">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-blue-100 text-blue-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="m5 8 6 6"></path><path d="m4 14 6-6"></path><path d="M2 5h10"></path><path d="M22 17H12"></path><path d="M2 11h10"></path><path d="M12 3v18"></path><path d="M12 11h9.5a1.5 1.5 0 0 1 0 3H12"></path></svg>
+                        </div>
+                        <h3 class="mt-5 text-2xl font-bold">Multi-lingual Support</h3>
+                        <p class="mt-3 text-lg text-slate-600">All content is available in 13 Indian languages, allowing students to learn in the language they are most comfortable with.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="custom-quizzes" class="py-20 sm:py-24 border-y border-slate-200">
+            <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto mb-12 max-w-2xl text-center">
+                    <span class="mb-4 inline-flex px-4 py-1.5 rounded-full text-lg text-white font-medium tracking-wide bg-gradient-to-r from-green-600 to-blue-600">Practice</span>
+                    <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">Custom Quizzes & Smart Practice</h2>
+                    <p class="mt-4 text-xl text-slate-600 leading-relaxed">Tailor your preparation to your specific needs with our powerful quiz builder.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="lg:w-full">
+                        <img src="https://i.postimg.cc/05K8R0PS/image.png" alt="Custom quiz creation interface" class="w-full h-auto rounded-xl shadow-lg border border-slate-200" onerror="this.onerror=null;this.src='https://placehold.co/600x450/E5E7EB/4B5563?text=Custom+Quiz+Mockup';" />
+                    </div>
+                    <div class="space-y-10">
+                        <div class="flex gap-5">
+                            <div class="mt-1 shrink-0 text-blue-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.56"></path><path d="m10.62 13.92 2.6-2.6A2.5 2.5 0 1 0 10 7.5"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-2xl text-slate-900">45,000+ Teacher-Verified MCQs</h4>
+                                <p class="mt-2 text-lg text-slate-600 leading-snug">Practice from our extensive question bank covering all NEET topics.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="mt-1 shrink-0 text-blue-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.56"></path><path d="m10.62 13.92 2.6-2.6A2.5 2.5 0 1 0 10 7.5"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-2xl text-slate-900">Personalized Quizzes</h4>
+                                <p class="mt-2 text-lg text-slate-600 leading-snug">Choose difficulty, topics, duration—your quiz, your way.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="mt-1 shrink-0 text-blue-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.56"></path><path d="m10.62 13.92 2.6-2.6A2.5 2.5 0 1 0 10 7.5"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-2xl text-slate-900">Targeted Improvement</h4>
+                                <p class="mt-2 text-lg text-slate-600 leading-snug">Bookmark key questions, and boost weak areas fast with AI recommendations.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="mt-1 shrink-0 text-blue-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.56"></path><path d="m10.62 13.92 2.6-2.6A2.5 2.5 0 1 0 10 7.5"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-2xl text-slate-900">3-Step Revision System</h4>
+                                <p class="mt-2 text-lg text-slate-600 leading-snug">Flag lists and spaced repetition for maximum retention.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pyqs" class="py-20 sm:py-24 bg-slate-50">
+            <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto mb-12 max-w-2xl text-center">
+                    <span class="mb-4 inline-flex px-4 py-1.5 rounded-full text-lg text-white font-medium tracking-wide bg-gradient-to-r from-green-600 to-blue-600">NEET PYQs</span>
+                    <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">Practice with NEET Previous Year Questions.</h2>
+                    <p class="mt-4 text-xl text-slate-600 leading-relaxed">Master the exam pattern and boost your confidence by solving thousands of authentic past papers.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <div class="p-8 bg-white rounded-xl border border-slate-200 shadow-md flex flex-col items-center text-center">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-blue-100 text-blue-600">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5z"></path><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"></path></svg>
+                        </div>
+                        <h3 class="mt-5 text-2xl font-bold">Year-wise & Subject-wise</h3>
+                        <p class="mt-3 text-lg text-slate-600">Practice papers from previous years, or filter by specific subjects like Physics, Chemistry, and Biology.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-xl border border-slate-200 shadow-md flex flex-col items-center text-center">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-blue-100 text-blue-600">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="M3 3v18h18"></path><path d="m18 10-6 6-4-4-4 4"></path></svg>
+                        </div>
+                        <h3 class="mt-5 text-2xl font-bold">Detailed Solutions</h3>
+                        <p class="mt-3 text-lg text-slate-600">Every question comes with a step-by-step solution and explanation to clarify concepts and improve understanding.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-xl border border-slate-200 shadow-md flex flex-col items-center text-center">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-blue-100 text-blue-600">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Z"></path><path d="M12 2v20"></path><path d="M2 12h20"></path><path d="M14.65 6.44c-1.28.77-2.6.24-3-.34m-2.22 8.35c.78-1.28.24-2.6-.34-3"></path><path d="M6.44 9.35a5.53 5.53 0 0 0 2.22 2.22c1.28.78 2.6.24 3-.34"></path><path d="M17.56 14.65a5.53 5.53 0 0 1-2.22-2.22c-.78-1.28-.24-2.6.34-3"></path></svg>
+                        </div>
+                        <h3 class="mt-5 text-2xl font-bold">Performance Tracking</h3>
+                        <p class="mt-3 text-lg text-slate-600">Our analytics show your performance on PYQs, highlighting recurring topics and areas for improvement.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-xl border border-slate-200 shadow-md flex flex-col items-center text-center">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-blue-100 text-blue-600">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.56"></path><path d="m10.62 13.92 2.6-2.6A2.5 2.5 0 1 0 10 7.5"></path></svg>
+                        </div>
+                        <h3 class="mt-5 text-2xl font-bold">Timed Practice</h3>
+                        <p class="mt-3 text-lg text-slate-600">Simulate the real exam environment with timed mock tests based on past papers to improve speed and accuracy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="languages" class="py-20 sm:py-24">
+            <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto mb-12 max-w-2xl text-center">
+                    <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">Learn in Your Language</h2>
+                    <p class="mt-4 text-xl text-slate-600 leading-relaxed">All 13 NEET Languages Supported</p>
+                </div>
+                <div id="language-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+                </div>
+                <div class="mt-10 text-center">
+                    <button id="show-more-btn" class="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-base font-medium ring-offset-background transition-colors h-12 px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold shadow-md">Show More</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="py-20 sm:py-24">
+            <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto mb-12 max-w-3xl text-center">
+                    <span class="mb-4 inline-flex px-4 py-1.5 rounded-full text-lg text-white font-medium tracking-wide bg-gradient-to-r from-green-600 to-blue-600">Pricing</span>
+                    <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">Simple, transparent pricing.</h2>
+                    <p class="mt-4 text-xl text-slate-600 leading-relaxed">Choose a plan that fits your needs, whether you're a single student or a large institute.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                    <div class="p-8 bg-white rounded-xl border-2 border-green-600 shadow-xl flex flex-col items-center text-center">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-full bg-blue-100 text-blue-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.56"></path><path d="m10.62 13.92 2.6-2.6A2.5 2.5 0 1 0 10 7.5"></path></svg>
+                        </div>
+                        <h3 class="mt-5 text-3xl font-bold">Student Plan</h3>
+                        <p class="mt-3 text-lg text-slate-500">For individual aspirants.</p>
+                        <p class="mt-8 text-5xl font-extrabold text-slate-900">₹999<span class="text-lg font-medium text-slate-500">/month</span></p>
+                        <button class="mt-8 w-full h-14 px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold shadow-md rounded-lg text-lg">Get Started</button>
+                        <ul class="mt-8 space-y-4 text-lg text-left w-full">
+                            <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/24/24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-blue-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.56"></path><path d="m10.62 13.92 2.6-2.6A2.5 2.5 0 1 0 10 7.5"></path></svg>Unlimited adaptive quizzes</li>
+                            <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/24/24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-blue-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.56"></path><path d="m10.62 13.92 2.6-2.6A2.5 2.5 0 1 0 10 7.5"></path></svg>Detailed performance reports</li>
+                            <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/24/24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-blue-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.56"></path><path d="m10.62 13.92 2.6-2.6A2.5 2.5 0 1 0 10 7.5"></path></svg>Full-length mock tests</li>
+                            <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/24/24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-blue-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.56"></path><path d="m10.62 13.92 2.6-2.6A2.5 2.5 0 1 0 10 7.5"></path></svg>Offline access (Android)</li>
+                        </ul>
+                    </div>
+                    <div class="p-8 bg-white rounded-xl border border-slate-200 shadow-md flex flex-col items-center text-center">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-full bg-blue-100 text-blue-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="M2 20V8h20v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z"></path><path d="M6 2v2"></path><path d="M18 2v2"></path><path d="M7 16h-.01"></path><path d="M11 16h-.01"></path><path d="M15 16h-.01"></path><path d="M7 12h-.01"></path><path d="M11 12h-.01"></path><path d="M15 12h-.01"></path><path d="M2 8V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4"></path></svg>
+                        </div>
+                        <h3 class="mt-5 text-3xl font-bold">Institute Plan</h3>
+                        <p class="mt-3 text-lg text-slate-500">For coaching institutes.</p>
+                        <p class="mt-8 text-2xl font-bold text-slate-900">Contact Us for Pricing</p>
+                        <button class="mt-8 w-full h-14 px-6 py-2 bg-slate-800 hover:bg-slate-900 text-white font-semibold rounded-lg text-lg">Contact Sales</button>
+                        <ul class="mt-8 space-y-4 text-lg text-left w-full">
+                            <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/24/24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-blue-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.56"></path><path d="m10.62 13.92 2.6-2.6A2.5 2.5 0 1 0 10 7.5"></path></svg>All student plan features</li>
+                            <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/24/24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-blue-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.56"></path><path d="m10.62 13.92 2.6-2.6A2.5 2.5 0 1 0 10 7.5"></path></svg>Cohort management & analytics</li>
+                            <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/24/24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-blue-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.56"></path><path d="m10.62 13.92 2.6-2.6A2.5 2.5 0 1 0 10 7.5"></path></svg>Branded platform & custom tests</li>
+                            <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/24/24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-blue-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.56"></path><path d="m10.62 13.92 2.6-2.6A2.5 2.5 0 1 0 10 7.5"></path></svg>Dedicated account manager</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 sm:py-24 bg-slate-50">
+            <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto mb-12 max-w-2xl text-center">
+                    <span class="mb-4 inline-flex px-4 py-1.5 rounded-full text-lg text-white font-medium tracking-wide bg-gradient-to-r from-green-600 to-blue-600">Contact Us</span>
+                    <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">Ready to get started?</h2>
+                    <p class="mt-4 text-xl text-slate-600 leading-relaxed">We're here to help. Reach out to our team with any questions you have about our platform.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <div class="p-8 bg-white rounded-xl border border-slate-200 shadow-md flex flex-col items-center text-center">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-blue-100 text-blue-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
+                        </div>
+                        <h3 class="mt-5 text-2xl font-bold">Contact Sales</h3>
+                        <p class="mt-3 text-lg text-slate-600">Interested in a partnership? Reach out to our sales team directly.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-xl border border-slate-200 shadow-md flex flex-col items-center text-center">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-blue-100 text-blue-600">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="M8 2v4"></path><path d="M16 2v4"></path><path d="M21 3v18h-18v-18h18zM3 10h18"></path></svg>
+                        </div>
+                        <h3 class="mt-5 text-2xl font-bold">Book a Demo</h3>
+                        <p class="mt-3 text-lg text-slate-600">Schedule a personalized walkthrough with a product expert at your convenience.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-xl border border-slate-200 shadow-md flex flex-col items-center text-center">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-blue-100 text-blue-600">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                        </div>
+                        <h3 class="mt-5 text-2xl font-bold">Email Us</h3>
+                        <p class="mt-3 text-lg text-slate-600">Have a question or need technical support? Send us an email and we'll get back to you.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-xl border border-slate-200 shadow-md flex flex-col items-center text-center">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-blue-100 text-blue-600">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <h3 class="mt-5 text-2xl font-bold">Chat with Us</h3>
+                        <p class="mt-3 text-lg text-slate-600">Get instant support and answers to your queries through our live chat system.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 sm:py-24 bg-gradient-to-r from-green-600 to-blue-600 text-white">
+            <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl sm:text-5xl font-bold tracking-tight">Ready to ace your NEET exam?</h2>
+                <p class="mt-4 text-xl leading-relaxed">Start your free trial today and experience smarter, more efficient preparation.</p>
+                <form id="email-signup-form" class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                    <input id="email-input" type="email" placeholder="Enter your email" required class="max-w-sm h-14 px-5 py-2 bg-white text-slate-900 placeholder:text-slate-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-lg" />
+                    <button type="submit" class="h-14 px-8 bg-white text-green-600 hover:bg-slate-100 font-semibold shadow-md rounded-lg text-lg">Get Started for Free</button>
+                </form>
+            </div>
+        </section>
+
+        <footer class="py-12 bg-slate-900 text-slate-300">
+            <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <img src="https://i.postimg.cc/j2Z5X2bh/image-removebg-preview.png" alt="NeetTracker logo" class="h-12 w-auto" />
+                    </div>
+                    <p class="text-lg">Smarter NEET prep.</p>
+                    <p class="text-sm">&copy; 2024 NeetTracker. All rights reserved.</p>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-white text-xl">Product</h5>
+                    <ul class="mt-4 space-y-3 text-lg">
+                        <li><a href="#solutions" class="hover:text-white transition-colors">Solutions</a></li>
+                        <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-white text-xl">Company</h5>
+                    <ul class="mt-4 space-y-3 text-lg">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-white text-xl">Legal</h5>
+                    <ul class="mt-4 space-y-3 text-lg">
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // --- JavaScript for dynamic features ---
+        
+        // 1. Mouse-tracking background gradient
+        document.addEventListener('mousemove', function(e) {
+            const gradientBg = document.getElementById('gradient-bg');
+            if (gradientBg) {
+                gradientBg.style.background = `radial-gradient(1200px at ${e.clientX}px ${e.clientY}px, rgba(34, 197, 94, 0.3), transparent)`;
+            }
+        });
+        
+        // 2. Tab switching logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabsList = document.getElementById('tabs-list');
+            const tabTriggers = tabsList ? tabsList.querySelectorAll('.tab-trigger') : [];
+            const tabsContent = document.getElementById('tabs-content');
+            
+            // Set initial state
+            const initialTab = tabsList.querySelector('[data-tab="students"]');
+            if (initialTab) {
+                const targetContentId = initialTab.getAttribute('data-tab');
+                const targetContent = document.getElementById(targetContentId);
+                if (targetContent) {
+                    targetContent.style.display = 'block';
+                }
+            }
+            
+            tabTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function() {
+                    // Reset all triggers and content
+                    tabTriggers.forEach(t => {
+                        t.classList.remove('bg-white', 'shadow-sm', 'text-slate-900');
+                        t.classList.add('hover:text-slate-900');
+                    });
+                    const allContent = tabsContent.querySelectorAll('.tab-content');
+                    allContent.forEach(c => c.style.display = 'none');
+                    
+                    // Activate clicked trigger and show corresponding content
+                    this.classList.add('bg-white', 'shadow-sm', 'text-slate-900');
+                    this.classList.remove('hover:text-slate-900');
+                    const targetContentId = this.getAttribute('data-tab');
+                    const targetContent = document.getElementById(targetContentId);
+                    if (targetContent) {
+                        targetContent.style.display = 'block';
+                    }
+                });
+            });
+        });
+        
+        // 3. Language "Show More/Less" toggle
+        const languages = [
+            { name: "English", localName: "", desc: "Complete NEET preparation in English" },
+            { name: "Hindi", localName: "हिंदी", desc: "Complete NEET preparation in Hindi(हिंदी)" },
+            { name: "Telugu", localName: "తెలుగు", desc: "Complete NEET preparation in Telugu(తెలుగు)" },
+            { name: "Tamil", localName: "தமிழ்", desc: "Complete NEET preparation in Tamil(தமிழ்)" },
+            { name: "Marathi", localName: "मराठी", desc: "Complete NEET preparation in Marathi(मराठी)" },
+            { name: "Bangla", localName: "বাংলা", desc: "Complete NEET preparation in Bangla(বাংলা)" },
+            { name: "Gujarati", localName: "ગુજરાતી", desc: "Complete NEET preparation in Gujarati(ગુજરાતી)" },
+            { name: "Urdu", localName: "اردو", desc: "Complete NEET preparation in Urdu(اردu)" },
+            { name: "Odia", localName: "ଓଡ଼ିଆ", desc: "Complete NEET preparation in Odia(ଓଡ଼ିଆ)" },
+            { name: "Assamese", localName: "অসমীয়া", desc: "Complete NEET preparation in Assamese(অসমীয়া)" },
+            { name: "Kannada", localName: "ಕನ್ನಡ", desc: "Complete NEET preparation in Kannada(ಕನ್ನಡ)" },
+            { name: "Malayalam", localName: "മലയാളം", desc: "Complete NEET preparation in Malayalam(മലയാളം)" },
+            { name: "Punjabi", localName: "ਪੰਜਾਬੀ", desc: "Complete NEET preparation in Punjabi(ਪੰਜਾਬੀ)" },
+        ];
+        
+        let showAllLanguages = false;
+        
+        function renderLanguages() {
+            const languageGrid = document.getElementById('language-grid');
+            if (!languageGrid) return;
+            languageGrid.innerHTML = '';
+            const displayedLanguages = showAllLanguages ? languages : languages.slice(0, 10);
+            
+            displayedLanguages.forEach((lang, index) => {
+                const card = document.createElement('div');
+                card.className = "p-6 flex flex-col items-center text-center relative h-full bg-white rounded-xl border border-slate-200 shadow-md fade-in";
+                card.innerHTML = `
+                    <div class="text-3xl font-bold text-slate-900">${lang.name}</div>
+                    ${lang.localName ? `<div class="text-lg text-slate-500 mt-2">(${lang.localName})</div>` : ''}
+                    <p class="mt-4 text-xl text-slate-600">${lang.desc}</p>
+                `;
+                languageGrid.appendChild(card);
+            });
+            
+            const btn = document.getElementById('show-more-btn');
+            if (btn) {
+                btn.textContent = showAllLanguages ? "Show Less" : "Show More";
+            }
+        }
+        
+        document.getElementById('show-more-btn').addEventListener('click', () => {
+            showAllLanguages = !showAllLanguages;
+            renderLanguages();
+        });
+        
+        // Initial render
+        renderLanguages();
+    </script>
+</body>
+</html>
